@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rotaract Club of Vizag Couples Prism</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#17202a;
+    background:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    box-shadow:0 2px 20px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:78px;
+    padding:10px 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#0875c9;
+}
+
+.brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+}
+
+.brand-name{
+    font-size:15px;
+    font-weight:800;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:23px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#26323d;
+    font-size:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#0875c9;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(8,117,201,.13),transparent 30%),
+        radial-gradient(circle at 80% 80%,rgba(8,117,201,.10),transparent 30%),
+        linear-gradient(135deg,#eef8ff,#fff);
+}
+
+.hero-content{
+    max-width:950px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 17px;
+    border-radius:30px;
+    background:#dff1ff;
+    color:#0875c9;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.08;
+    margin:25px 0 20px;
+}
+
+.hero h1 span{
+    color:#0875c9;
+}
+
+.hero-text{
+    max-width:720px;
+    margin:auto;
+    color:#5d6873;
+    font-size:18px;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:30px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.primary{
+    background:#0875c9;
+    color:white;
+    box-shadow:0 8px 20px rgba(8,117,201,.25);
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+    background:#055b9c;
+}
+
+.secondary{
+    border:2px solid #0875c9;
+    color:#0875c9;
+}
+
+.secondary:hover{
+    background:#0875c9;
+    color:white;
+}
+
+/* SECTIONS */
+
+.section{
+    padding:100px 7%;
+    text-align:center;
+}
+
+.light{
+    background:#f5f9fc;
+}
+
+.section-label{
+    color:#0875c9;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:3px;
+}
+
+.section h2{
+    font-size:42px;
+    margin:10px 0 18px;
+}
+
+.section-text{
+    max-width:760px;
+    margin:auto;
+    color:#66717c;
+}
+
+/* ABOUT */
+
+.about-grid{
+    max-width:1050px;
+    margin:55px auto 0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.stat{
+    background:white;
+    padding:30px 18px;
+    border-radius:18px;
+    box-shadow:0 8px 28px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.stat:hover{
+    transform:translateY(-6px);
+}
+
+.stat-icon{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.stat h3{
+    color:#0875c9;
+    font-size:20px;
+}
+
+/* CARDS */
+
+.cards{
+    max-width:1120px;
+    margin:50px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.info-card,
+.person-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 28px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.info-card:hover,
+.person-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.11);
+}
+
+/* BOARD */
+
+.person-photo{
+    height:210px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#eaf6ff,#dcefff);
+    color:#0875c9;
+    border-radius:15px;
+    margin-bottom:20px;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.person-card h3{
+    color:#0875c9;
+    font-size:17px;
+    margin-bottom:4px;
+}
+
+.person-card p{
+    color:#69747e;
+    font-size:14px;
+}
+
+/* FOCUS */
+
+.icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eaf6ff;
+    border-radius:50%;
+    font-size:34px;
+}
+
+.info-card h3{
+    color:#0875c9;
+    margin-bottom:10px;
+}
+
+.info-card p{
+    color:#68737e;
+}
+
+/* PROJECTS */
+
+.project-card{
+    text-align:left;
+    padding:0 0 25px;
+    overflow:hidden;
+}
+
+.project-image{
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#dff1ff,#edf8ff);
+    color:#0875c9;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+.project-tag{
+    display:inline-block;
+    margin-left:25px;
+    color:#0875c9;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.project-card h3,
+.project-card p{
+    margin-left:25px;
+    margin-right:25px;
+}
+
+.project-card h3{
+    margin-top:8px;
+    margin-bottom:8px;
+}
+
+.project-card p{
+    margin-bottom:18px;
+}
+
+.read-more{
+    margin-left:25px;
+    color:#0875c9;
+    font-weight:800;
+}
+
+/* EVENTS */
+
+.event-box{
+    max-width:850px;
+    margin:25px auto;
+    padding:35px;
+    text-align:left;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 8px 28px rgba(0,0,0,.07);
+    border-left:5px solid #0875c9;
+}
+
+.event-date{
+    color:#0875c9;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.event-box h3{
+    margin:8px 0;
+    font-size:24px;
+}
+
+.event-box p{
+    color:#69747e;
+}
+
+/* GALLERY */
+
+.gallery{
+    max-width:1120px;
+    margin:50px auto 0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.gallery-item{
+    height:190px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#eaf6ff,#dff1ff);
+    color:#0875c9;
+    border-radius:18px;
+    font-weight:900;
+    transition:.3s;
+}
+
+.gallery-item:hover{
+    transform:scale(1.02);
+}
+
+/* ACHIEVEMENTS */
+
+.achievement-box{
+    max-width:1050px;
+    margin:50px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.achievement{
+    padding:35px 20px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 8px 28px rgba(0,0,0,.07);
+}
+
+.achievement-icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.achievement h3{
+    color:#0875c9;
+    margin-bottom:8px;
+}
+
+.achievement p{
+    color:#68737e;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:100px 8%;
+    text-align:center;
+    background:#0875c9;
+    color:white;
+}
+
+.contact .section-label{
+    color:white;
+}
+
+.contact h2{
+    font-size:44px;
+    margin:10px 0 15px;
+}
+
+.contact-text{
+    max-width:650px;
+    margin:0 auto 30px;
+}
+
+.contact .primary{
+    background:white;
+    color:#0875c9;
+}
+
+.social-links{
+    margin-top:28px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    padding:9px 17px;
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:25px;
+    color:white;
+    font-size:14px;
+    transition:.3s;
+}
+
+.social-links a:hover{
+    background:white;
+    color:#0875c9;
+}
+
+/* FOOTER */
+
+footer{
+    padding:38px 20px;
+    background:#101820;
+    color:white;
+    text-align:center;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.footer-brand img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+footer p{
+    color:#c9d0d6;
+    font-size:13px;
+    margin-top:4px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        padding:20px;
+        background:white;
+        flex-direction:column;
+        gap:18px;
+        box-shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .about-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .achievement-box{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:10px 18px;
+    }
+
+    .brand-name{
+        font-size:12px;
+    }
+
+    .brand img{
+        width:45px;
+        height:45px;
+    }
+
+    .hero{
+        min-height:82vh;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero-text{
+        font-size:16px;
+    }
+
+    .section{
+        padding:75px 6%;
+    }
+
+    .section h2{
+        font-size:32px;
+    }
+
+    .about-grid,
+    .cards,
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item{
+        height:210px;
+    }
+
+    .contact h2{
+        font-size:34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+<nav class="navbar">
+
+<a href="#home" class="brand">
+<img src="images/logo.png.png" alt="Rotaract Club Logo">
+<span class="brand-name">RAC Vizag Couples Prism</span>
+</a>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#board">Board</a></li>
+<li><a href="#focus">Focus</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#achievements">Awards</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<span class="badge">ROTARACT CLUB • VIZAG</span>
+
+<h1>
+Rotaract Club of
+<br>
+<span>Vizag Couples Prism</span>
+</h1>
+
+<p class="hero-text">
+Young minds. Strong friendships. Meaningful service.
+Together, we create opportunities, develop leaders and make
+a positive difference in our community.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#about" class="btn primary">
+Discover Our Club
+</a>
+
+<a href="#board" class="btn secondary">
+Meet Our Board
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<p class="section-label">WHO WE ARE</p>
+
+<h2>About Our Club</h2>
+
+<p class="section-text">
+The Rotaract Club of Vizag Couples Prism brings together
+young people who believe in service, leadership, friendship
+and personal growth. Through projects, events and fellowship,
+we work together to create meaningful experiences and positive
+impact.
+</p>
+
+<div class="about-grid">
+
+<div class="stat">
+<div class="stat-icon">🤝</div>
+<h3>Service</h3>
+<p>Serving our community</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">👑</div>
+<h3>Leadership</h3>
+<p>Building future leaders</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🌟</div>
+<h3>Fellowship</h3>
+<p>Creating lasting friendships</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🚀</div>
+<h3>Growth</h3>
+<p>Learning and development</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOARD -->
+
+<section class="section light" id="board">
+
+<p class="section-label">OUR TEAM</p>
+
+<h2>Board of Directors</h2>
+
+<p class="section-text">
+Meet the team leading our club with passion, responsibility
+and a commitment to service.
+</p>
+
+<div class="cards">
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Bharath Kumar Paridala</h3>
+<p>President</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Vishnu Vardhan</h3>
+<p>Vice President</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Dipti Rao</h3>
+<p>Secretary</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Harshitha</h3>
+<p>Joint Secretary</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Lakshmi Priya</h3>
+<p>Treasurer</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Apoorva</h3>
+<p>Club Service Director</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Avinash</h3>
+<p>Community Service Director</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Akhilesh</h3>
+<p>Membership Director</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Praveen</h3>
+<p>Youth Service Director</p>
+</div>
+
+<div class="person-card">
+<div class="person-photo">ADD PHOTO</div>
+<h3>Rtr. Nikitha Sree</h3>
+<p>Sergeant-at-Arms</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOCUS -->
+
+<section class="section" id="focus">
+
+<p class="section-label">WHAT WE STAND FOR</p>
+
+<h2>Our Focus Areas</h2>
+
+<p class="section-text">
+We believe that service, leadership and fellowship can help
+young people create lasting change.
+</p>
+
+<div class="cards">
+
+<div class="info-card">
+<div class="icon">🤝</div>
+<h3>Community Service</h3>
+<p>Creating meaningful projects that support our community.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🌱</div>
+<h3>Environment</h3>
+<p>Promoting awareness and responsible environmental practices.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🎓</div>
+<h3>Youth Empowerment</h3>
+<p>Helping young people develop confidence and leadership skills.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">💼</div>
+<h3>Professional Development</h3>
+<p>Creating opportunities for learning, networking and growth.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🌍</div>
+<h3>International Service</h3>
+<p>Building connections and contributing beyond our local community.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">❤️</div>
+<h3>Fellowship</h3>
+<p>Building friendship, teamwork and a strong Rotaract family.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="section light" id="projects">
+
+<p class="section-label">OUR IMPACT</p>
+
+<h2>Our Projects</h2>
+
+<p class="section-text">
+Our projects turn ideas into action. Details and photographs
+will be added here.
+</p>
+
+<div class="cards">
+
+<div class="info-card project-card">
+
+<div class="project-image">PROJECT PHOTO</div>
+
+<span class="project-tag">COMMUNITY</span>
+
+<h3>Project Name</h3>
+
+<p>
+Project description will be added here.
+</p>
+
+<a href="#" class="read-more">View Project →</a>
+
+</div>
+
+
+<div class="info-card project-card">
+
+<div class="project-image">PROJECT PHOTO</div>
+
+<span class="project-tag">ENVIRONMENT</span>
+
+<h3>Project Name</h3>
+
+<p>
+Project description will be added here.
+</p>
+
+<a href="#" class="read-more">View Project →</a>
+
+</div>
+
+
+<div class="info-card project-card">
+
+<div class="project-image">PROJECT PHOTO</div>
+
+<span class="project-tag">YOUTH</span>
+
+<h3>Project Name</h3>
+
+<p>
+Project description will be added here.
+</p>
+
+<a href="#" class="read-more">View Project →</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EVENTS -->
+
+<section class="section" id="events">
+
+<p class="section-label">WHAT'S HAPPENING</p>
+
+<h2>Events</h2>
+
+<div class="event-box">
+
+<span class="event-date">COMING SOON</span>
+
+<h3>Our Next Event</h3>
+
+<p>
+Event date, venue and details will be updated here.
+</p>
+
+</div>
+
+<div class="event-box">
+
+<span class="event-date">UPCOMING</span>
+
+<h3>Rotaract Activity</h3>
+
+<p>
+More event information will be added soon.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section light" id="gallery">
+
+<p class="section-label">MEMORIES</p>
+
+<h2>Our Gallery</h2>
+
+<p class="section-text">
+Photos from our projects, events and fellowship activities
+will appear here.
+</p>
+
+<div class="gallery">
+
+<div class="gallery-item">PHOTO 01</div>
+<div class="gallery-item">PHOTO 02</div>
+<div class="gallery-item">PHOTO 03</div>
+<div class="gallery-item">PHOTO 04</div>
+<div class="gallery-item">PHOTO 05</div>
+<div class="gallery-item">PHOTO 06</div>
+<div class="gallery-item">PHOTO 07</div>
+<div class="gallery-item">PHOTO 08</div>
+
+</div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+
+<section class="section" id="achievements">
+
+<p class="section-label">OUR JOURNEY</p>
+
+<h2>Achievements & Awards</h2>
+
+<div class="achievement-box">
+
+<div class="achievement">
+<div class="achievement-icon">🏆</div>
+<h3>Achievement 01</h3>
+<p>Club achievement will be added here.</p>
+</div>
+
+<div class="achievement">
+<div class="achievement-icon">⭐</div>
+<h3>Achievement 02</h3>
+<p>Club achievement will be added here.</p>
+</div>
+
+<div class="achievement">
+<div class="achievement-icon">🎖️</div>
+<h3>Achievement 03</h3>
+<p>Club achievement will be added here.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<p class="section-label">GET INVOLVED</p>
+
+<h2>Be Part of the Change</h2>
+
+<p class="contact-text">
+Want to connect with our club, participate in a project,
+or collaborate with us? Get in touch.
+</p>
+
+<a href="mailto:yourclubemail@example.com" class="btn primary">
+Contact Us
+</a>
+
+<div class="social-links">
+
+<a href="#" target="_blank">Instagram</a>
+<a href="#" target="_blank">Facebook</a>
+<a href="#" target="_blank">LinkedIn</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-brand">
+
+<img src="images/logo.png" alt="Rotaract Club Logo">
+
+<strong>
+Rotaract Club of Vizag Couples Prism
+</strong>
+
+</div>
+
+<p>Service Above Self</p>
+
+<p>© 2026 Rotaract Club of Vizag Couples Prism</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+const nav =
+document.getElementById("navLinks");
+
+nav.classList.toggle("active");
+
+}
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+document
+.getElementById("navLinks")
+.classList.remove("active");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
